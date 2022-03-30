@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context="com.veryfi.lens.credit.cards.demo.MainActivity">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/openCameraButton"
+            android:clipToPadding="false"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:id="@+id/textViewLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/content_inset_small"
+                android:fontFamily="@font/courier_new"
+                android:isScrollContainer="true"
+                android:padding="@dimen/content_inset_small"
+                android:scrollbars="vertical"
+                android:textColor="#000000"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/openCameraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/camera" />
+
+    </RelativeLayout>
+</layout>

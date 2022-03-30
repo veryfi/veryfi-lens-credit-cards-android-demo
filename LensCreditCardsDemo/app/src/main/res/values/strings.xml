@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lens Demo</string>
+    <string name="camera">Camera</string>
+    <string name="retry_all">Retry all</string>
+</resources>

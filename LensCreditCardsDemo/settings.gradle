@@ -1,0 +1,38 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://xxx.xxx"
+            credentials {
+                username = 'xxx'
+                password = 'xxx'
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://xxx.xxx"
+            credentials {
+                username = 'xxx'
+                password = 'xxx'
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+rootProject.name = "LensCreditCardsDemo"
+include ':app'
