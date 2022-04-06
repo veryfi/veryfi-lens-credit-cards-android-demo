@@ -13,29 +13,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        externalNativeBuild {
-            cmake {
-                cppFlags "-frtti -fexceptions"
-                cppFlags "-std=c++17"
-                arguments "-DANDROID_STL=c++_shared"
-            }
-        }
-
-        ndk {
-            // Specifies the ABI configurations of your native
-            // libraries Gradle should build and package with your APK.
-            abiFilters "armeabi-v7a", "arm64-v8a",  "x86", "x86_64"
-        }
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments += [
-                        "room.schemaLocation":"$projectDir/schemas".toString(),
-                        "room.incremental":"true",
-                        "room.expandProjection":"true"]
-            }
-        }
+        buildConfigField 'String', 'VERYFI_CLIENT_ID', "\"${System.getenv("VERYFI_CLIENT_ID")}\""
+        buildConfigField 'String', 'VERYFI_USERNAME', "\"${System.getenv("VERYFI_USERNAME")}\""
+        buildConfigField 'String', 'VERYFI_API_KEY', "\"${System.getenv("VERYFI_API_KEY")}\""
+        buildConfigField 'String', 'VERYFI_URL', "\"${System.getenv("VERYFI_URL")}\""
     }
 
     androidResources {
@@ -66,6 +47,6 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.5.5.3'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.5.5.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

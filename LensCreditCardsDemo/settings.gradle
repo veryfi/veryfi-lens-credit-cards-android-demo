@@ -5,10 +5,10 @@ pluginManagement {
         mavenCentral()
         maven { url "https://jitpack.io" }
         maven {
-            url "https://xxx.xxx"
+            url System.getenv("MAVEN_VERYFI_URL")
             credentials {
-                username = 'xxx'
-                password = 'xxx'
+                username = System.getenv("MAVEN_VERYFI_USERNAME")
+                password = System.getenv("MAVEN_VERYFI_PASSWORD")
             }
             authentication {
                 basic(BasicAuthentication)
@@ -23,10 +23,10 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url "https://jitpack.io" }
         maven {
-            url "https://xxx.xxx"
+            url System.getenv("MAVEN_VERYFI_URL")
             credentials {
-                username = 'xxx'
-                password = 'xxx'
+                username = System.getenv("MAVEN_VERYFI_USERNAME")
+                password = System.getenv("MAVEN_VERYFI_PASSWORD")
             }
             authentication {
                 basic(BasicAuthentication)
