@@ -4,6 +4,7 @@ import android.app.Application
 import com.veryfi.lens.VeryfiLens
 import com.veryfi.lens.VeryfiLensCredentials
 import com.veryfi.lens.VeryfiLensSettings
+import com.veryfi.lens.helpers.DocumentType
 
 class Application: Application() {
 
@@ -29,7 +30,7 @@ class Application: Application() {
         veryfiLensSettings.autoCaptureIsOn = true
         veryfiLensSettings.autoRotateIsOn = true
         veryfiLensSettings.autoSubmitDocumentOnCapture = true
-        veryfiLensSettings.documentTypes = arrayListOf("credit_card")
+        veryfiLensSettings.documentTypes = arrayListOf(DocumentType.CREDIT_CARD)
         veryfiLensSettings.galleryIsOn = false
         veryfiLensSettings.moreMenuIsOn = false
         veryfiLensSettings.showDocumentTypes = true
