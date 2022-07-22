@@ -1,47 +1,953 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
 
-    <data>
-
-    </data>
-
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        tools:context="com.veryfi.lens.credit.cards.demo.MainActivity">
+        tools:ignore="PrivateResource">
 
-        <ScrollView
-            android:id="@+id/scrollView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/openCameraButton"
-            android:clipToPadding="false"
-            android:scrollbars="vertical">
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textViewLogs"
+            <ImageView
+                android:id="@+id/veryfi_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_vector_veryfi_black" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/settings_general_card"
+                style="?attr/materialCardViewElevatedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/courier_new"
-                android:isScrollContainer="true"
-                android:padding="8dp"
-                android:scrollbars="vertical"
-                android:textColor="#000000"
-                android:textIsSelectable="true"
-                android:textSize="14sp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="16dp">
 
-        </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <Button
-            android:id="@+id/openCameraButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="@string/camera" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
 
-    </RelativeLayout>
-</layout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_vector_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/settings_section_general"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_light_detection"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_submit_document_capture"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_submit_documents_capture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_backup_docs_gallery"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_backup_docs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_close_camera_submit"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_close_camera_submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/settings_image_processing_card"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_vector_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/settings_section_image_processing"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_rotate"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_auto_rotate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_blur_detection"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_blur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_skew_correction"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_skew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_crop_gallery"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_auto_crop_gallery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/settings_ui_card"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_vector_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/settings_section_ui"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_primary_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_primary_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_accent_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_accent_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_detect_fill_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_detect_fill_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_submit_background_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_submit_background_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_submit_border_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_submit_border_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_submit_font_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_submit_font_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_submit_corner_radius"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <TextView
+                            android:id="@+id/txt_corner_radius"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_gallery"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_gallery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_rotate_doc"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_rotate_doc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/settings_api_card"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_vector_settings" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/settings_section_api"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_auto_delete_processing"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_auto_delete_processing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_boost_mode"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_boost_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_bounding_boxes"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_bounding_boxes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_detect_blur_response"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_detect_blur_response"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_is_production"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_is_production"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_confidence_details"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_confidence_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_parse_address"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <Switch
+                            android:id="@+id/switch_parse_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginBottom="-2dp"
+                            android:checked="true"
+                            android:paddingRight="-2dp"
+                            tools:ignore="RtlHardcoded,RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_external_id"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <TextView
+                            android:id="@+id/txt_external_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="N/A"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/content_description"
+        app:layout_behavior=".helpers.FabBehavior"
+        app:srcCompat="@drawable/ic_vector_camera" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
