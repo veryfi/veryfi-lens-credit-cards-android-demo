@@ -1,5 +1,67 @@
 <resources>
     <string name="app_name">Lens Demo</string>
-    <string name="camera">Camera</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_scan">Scan</string>
     <string name="retry_all">Retry all</string>
+    <string name="settings_section_general">Settings general</string>
+    <string name="settings_set_color_title">Set color</string>
+    <string name="settings_section_image_processing">Settings image processing</string>
+    <string name="settings_section_ui">Settings UI</string>
+    <string name="settings_section_api">Settings API</string>
+    <string name="settings_auto_light_detection">Auto light detection</string>
+    <string name="settings_blur_detection">Blur detection</string>
+    <string name="settings_stitch">Stitch</string>
+    <string name="settings_auto_skew_correction">Auto skew correction</string>
+    <string name="content_description">content description</string>
+    <string name="settings_primary_color">Primary color</string>
+    <string name="settings_accent_color">Accent color</string>
+    <string name="settings_detect_fill_color">Doc detect fill color</string>
+    <string name="settings_submit_background_color">Submit button background color</string>
+    <string name="settings_submit_border_color">Submit button border color</string>
+    <string name="settings_submit_font_color">Submit button font color</string>
+    <string name="settings_submit_corner_radius">Submit button corner radius</string>
+    <string name="settings_auto_rotate">Auto rotate</string>
+    <string name="settings_auto_doc_detection">Auto doc detection and crop</string>
+    <string name="settings_auto_crop_gallery">Auto crop gallery</string>
+    <string name="settings_allow_undetected_docs">Allow submit undetected docs</string>
+    <string name="settings_auto_submit_document_capture">Auto submit document on capture</string>
+    <string name="settings_backup_docs_gallery">Backup docs to gallery</string>
+    <string name="settings_return_stitched_pdf">Return stitched PDF</string>
+    <string name="settings_close_camera_submit">Close camera on submit</string>
+    <string name="settings_location_services">Location services</string>
+    <string name="settings_original_image_max_size">Original image max size in MB</string>
+    <string name="settings_auto_delete_processing">Auto delete after processing</string>
+    <string name="settings_boost_mode">Boost mode</string>
+    <string name="settings_bounding_boxes">Bounding boxes</string>
+    <string name="settings_detect_blur_response">Detect blur response</string>
+    <string name="settings_is_production">Is production</string>
+    <string name="settings_confidence_details">Confidence details</string>
+    <string name="settings_parse_address">Parse address</string>
+    <string name="settings_external_id">External ID</string>
+    <string name="settings_manual_crop">Manual crop</string>
+    <string name="settings_more_menu">More menu</string>
+    <string name="settings_more_settings_menu">More settings menu</string>
+    <string name="settings_gallery">Gallery</string>
+    <string name="settings_dictate">Dictate</string>
+    <string name="settings_email_cc">Email CC</string>
+    <string name="settings_email_cc_domain">Email CC domain</string>
+    <string name="settings_rotate_doc">Rotate doc</string>
+    <string name="settings_shield_protection">Shield protection</string>
+    <string name="settings_doc_detect_stroke_color">Doc detect stroke UI color</string>
+    <string name="settings_set_submit_button_corner_radius">Set submit button corner radius</string>
+    <string name="settings_set_original_image_size">Set original image size</string>
+    <string name="settings_hint_cc_domain">Email CC Domain</string>
+    <string name="settings_hint_external_id">External ID</string>
+    <string name="settings_set_email_cc_domain">Set email CC domain</string>
+    <string name="settings_set_external_id">Set external ID</string>
+    <string name="logs_start_uploading" translatable="false">Start uploading</string>
+    <string name="logs_thumbnail" translatable="false">Thumbnail</string>
+    <string name="logs_original_image" translatable="false">Original image</string>
+    <string name="logs_extraction" translatable="false">Extraction</string>
+    <string name="logs_result" translatable="false">Result</string>
+    <string name="logs_remove_cache_data" translatable="false">Remove cache data</string>
+    <string name="logs_exception" translatable="false">Exception</string>
+    <string name="logs_error" translatable="false">Error</string>
+    <string name="logs_failed" translatable="false">Failed</string>
 </resources>
