@@ -47,6 +47,6 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.5.7.3'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.5.7.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
