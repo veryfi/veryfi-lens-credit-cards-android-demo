@@ -2,11 +2,11 @@ package com.veryfi.lens.credit.cards.demo
 
 import android.app.Application
 import com.veryfi.lens.VeryfiLens
-import com.veryfi.lens.VeryfiLensCredentials
-import com.veryfi.lens.VeryfiLensSettings
 import com.veryfi.lens.helpers.DocumentType
+import com.veryfi.lens.helpers.VeryfiLensCredentials
+import com.veryfi.lens.helpers.VeryfiLensSettings
 
-class Application: Application() {
+class Application : Application() {
 
     companion object {
         //REPLACE YOUR KEYS HERE

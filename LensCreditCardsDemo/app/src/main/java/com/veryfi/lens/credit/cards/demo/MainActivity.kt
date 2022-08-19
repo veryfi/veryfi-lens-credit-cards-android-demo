@@ -14,12 +14,12 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rarepebble.colorpicker.ColorPickerView
 import com.veryfi.lens.VeryfiLens
-import com.veryfi.lens.VeryfiLensCredentials
-import com.veryfi.lens.VeryfiLensSettings
 import com.veryfi.lens.credit.cards.demo.databinding.ActivityMainBinding
 import com.veryfi.lens.credit.cards.demo.helpers.ThemeHelper
 import com.veryfi.lens.credit.cards.demo.logs.LogsActivity
 import com.veryfi.lens.helpers.DocumentType
+import com.veryfi.lens.helpers.VeryfiLensCredentials
+import com.veryfi.lens.helpers.VeryfiLensSettings
 
 
 class MainActivity : AppCompatActivity() {
@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
     private var confidenceDetailsIsOn = veryfiLensSettings.confidenceDetailsIsOn
     private var parseAddressIsOn = veryfiLensSettings.parseAddressIsOn
     private var externalId = veryfiLensSettings.externalId ?: ""
+    private var gpuIsOn = veryfiLensSettings.gpuIsOn
 
     override fun onStart() {
         super.onStart()
@@ -118,6 +119,7 @@ class MainActivity : AppCompatActivity() {
         viewBinding.switchIsProduction.isChecked = isProduction
         viewBinding.switchConfidenceDetails.isChecked = confidenceDetailsIsOn
         viewBinding.switchParseAddress.isChecked = parseAddressIsOn
+        viewBinding.switchGpu.isChecked = gpuIsOn
         initColors()
         initFloatValues()
         initStringValues()
@@ -218,6 +220,10 @@ class MainActivity : AppCompatActivity() {
             parseAddressIsOn = isChecked
         }
 
+        viewBinding.switchGpu.setOnCheckedChangeListener { _, isChecked ->
+            gpuIsOn = isChecked
+        }
+
         viewBinding.imgPrimaryColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
@@ -239,19 +245,19 @@ class MainActivity : AppCompatActivity() {
         viewBinding.imgSubmitBackgroundColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonBackgroundColor, 3)
+            submitButtonBackgroundColor?.let { it1 -> showDialog(it1, 3) }
         }
 
         viewBinding.imgSubmitBorderColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonBorderColor, 4)
+            submitButtonBorderColor?.let { it1 -> showDialog(it1, 4) }
         }
 
         viewBinding.imgSubmitFontColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(submitButtonFontColor, 5)
+            submitButtonFontColor?.let { it1 -> showDialog(it1, 5) }
         }
 
         viewBinding.txtCornerRadius.setOnClickListener {
@@ -424,6 +430,7 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.isProduction = isProduction
         veryfiLensSettings.confidenceDetailsIsOn = confidenceDetailsIsOn
         veryfiLensSettings.parseAddressIsOn = parseAddressIsOn
+        veryfiLensSettings.gpuIsOn = gpuIsOn
         veryfiLensSettings.externalId = externalId
         veryfiLensSettings.documentTypes = arrayListOf(DocumentType.CREDIT_CARD)
         veryfiLensSettings.showDocumentTypes = true

@@ -64,4 +64,5 @@
     <string name="logs_exception" translatable="false">Exception</string>
     <string name="logs_error" translatable="false">Error</string>
     <string name="logs_failed" translatable="false">Failed</string>
+    <string name="settings_gpu">GPU</string>
 </resources>
