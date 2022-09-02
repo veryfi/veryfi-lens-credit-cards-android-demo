@@ -48,7 +48,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.0'
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.6.1.0'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.6.1.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.github.martin-stone:hsv-alpha-color-picker-android:3.0.1'
