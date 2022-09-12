@@ -20,7 +20,7 @@ You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.c
 4. [Get in contact with our team](#contact)
 
 ## Veryfi Lens Credit Cards Android Example <a name="example"></a>
-![credit_card](https://user-images.githubusercontent.com/46335146/162985559-6ad6bb1f-7487-450e-a64f-aef0793d75f9.gif)
+![LensCreditCardDemo](https://user-images.githubusercontent.com/30125790/189683896-edcda828-3ffb-408f-8ac2-838483152306.gif)
 
 ## Other Lens Android Examples <a name="examples"></a>
 This is an example of how to use Veryfi Lens Credit Cards in your app, you can find the developer documentation [here](AndroidLensCreditCards.pdf).
