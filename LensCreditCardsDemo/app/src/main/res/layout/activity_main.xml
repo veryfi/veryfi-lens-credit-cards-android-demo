@@ -463,12 +463,124 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:text="@string/settings_primary_dark_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_primary_dark_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_secondary_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_secondary_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_secondary_dark_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_secondary_dark_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/settings_accent_color"
                             android:textSize="14sp"
                             tools:ignore="PrivateResource" />
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/img_accent_color"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@string/content_description"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurface"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_accent_dark_color"
+                            android:textSize="14sp"
+                            tools:ignore="PrivateResource" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_accent_dark_color"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:contentDescription="@string/content_description"

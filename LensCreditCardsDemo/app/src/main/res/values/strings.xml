@@ -15,7 +15,11 @@
     <string name="settings_auto_skew_correction">Auto skew correction</string>
     <string name="content_description">content description</string>
     <string name="settings_primary_color">Primary color</string>
+    <string name="settings_primary_dark_color">Primary dark color</string>
+    <string name="settings_secondary_color">Secondary color</string>
+    <string name="settings_secondary_dark_color">Secondary dark color</string>
     <string name="settings_accent_color">Accent color</string>
+    <string name="settings_accent_dark_color">Accent dark color</string>
     <string name="settings_detect_fill_color">Doc detect fill color</string>
     <string name="settings_submit_background_color">Submit button background color</string>
     <string name="settings_submit_border_color">Submit button border color</string>

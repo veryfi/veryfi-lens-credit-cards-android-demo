@@ -48,8 +48,12 @@ class MainActivity : AppCompatActivity() {
     private var blurDetectionIsOn = veryfiLensSettings.blurDetectionIsOn
     private var autoSkewCorrectionIsOn = veryfiLensSettings.autoSkewCorrectionIsOn
     private var autoCropGalleryIsOn = veryfiLensSettings.autoCropGalleryIsOn
-    private var primaryColor = veryfiLensSettings.primaryColor ?: "#ff4285f4"
-    private var accentColor = veryfiLensSettings.accentColor ?: "#ff4285f4"
+    private var primaryColor = veryfiLensSettings.primaryColor ?: "#FF005AC1"
+    private var primaryDarkColor = veryfiLensSettings.primaryDarkColor ?: "#FFADC6FF"
+    private var secondaryColor = veryfiLensSettings.secondaryColor ?: "#FFDBE2F9"
+    private var secondaryDarkColor = veryfiLensSettings.secondaryDarkColor ?: "#FF3F4759"
+    private var accentColor = veryfiLensSettings.accentColor ?: "#FF005AC1"
+    private var accentDarkColor = veryfiLensSettings.accentDarkColor ?: "#FFDBE2F9"
     private var docDetectFillUIColor = veryfiLensSettings.docDetectFillUIColor ?: "#9653BF8A"
     private var submitButtonBackgroundColor = veryfiLensSettings.submitButtonBackgroundColor
     private var submitButtonBorderColor = veryfiLensSettings.submitButtonBorderColor
@@ -127,7 +131,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initColors() {
         viewBinding.imgPrimaryColor.setBackgroundColor(Color.parseColor(primaryColor))
+        viewBinding.imgPrimaryDarkColor.setBackgroundColor(Color.parseColor(primaryDarkColor))
+        viewBinding.imgSecondaryColor.setBackgroundColor(Color.parseColor(secondaryColor))
+        viewBinding.imgSecondaryDarkColor.setBackgroundColor(Color.parseColor(secondaryDarkColor))
         viewBinding.imgAccentColor.setBackgroundColor(Color.parseColor(accentColor))
+        viewBinding.imgAccentDarkColor.setBackgroundColor(Color.parseColor(accentDarkColor))
         viewBinding.imgDetectFillColor.setBackgroundColor(Color.parseColor(docDetectFillUIColor))
         viewBinding.imgSubmitBackgroundColor.setBackgroundColor(
             Color.parseColor(
@@ -143,7 +151,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initStringValues() {
-        viewBinding.txtExternalId.text = externalId
+        viewBinding.txtExternalId.text = (externalId.ifEmpty { "N/A" }).toString()
     }
 
     @SuppressLint("InflateParams")
@@ -230,50 +238,74 @@ class MainActivity : AppCompatActivity() {
             showDialog(primaryColor, 0)
         }
 
+        viewBinding.imgPrimaryDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(primaryDarkColor, 1)
+        }
+
+        viewBinding.imgSecondaryColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(secondaryColor, 2)
+        }
+
+        viewBinding.imgSecondaryDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(secondaryDarkColor, 3)
+        }
+
         viewBinding.imgAccentColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(accentColor, 1)
+            showDialog(accentColor, 4)
+        }
+
+        viewBinding.imgAccentDarkColor.setOnClickListener {
+            customAlertDialogView = LayoutInflater.from(this)
+                .inflate(R.layout.fragment_color_picker, null, false)
+            showDialog(accentDarkColor, 5)
         }
 
         viewBinding.imgDetectFillColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            showDialog(docDetectFillUIColor, 2)
+            showDialog(docDetectFillUIColor, 6)
         }
 
         viewBinding.imgSubmitBackgroundColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            submitButtonBackgroundColor?.let { it1 -> showDialog(it1, 3) }
+            showDialog(submitButtonBackgroundColor, 7)
         }
 
         viewBinding.imgSubmitBorderColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            submitButtonBorderColor?.let { it1 -> showDialog(it1, 4) }
+            showDialog(submitButtonBorderColor, 8)
         }
 
         viewBinding.imgSubmitFontColor.setOnClickListener {
             customAlertDialogView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_color_picker, null, false)
-            submitButtonFontColor?.let { it1 -> showDialog(it1, 5) }
+            showDialog(submitButtonFontColor, 9)
         }
 
         viewBinding.txtCornerRadius.setOnClickListener {
             customAlertDialogSliderView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_bar_selection, null, false)
-            showDialogWithSlider(submitButtonCornerRadius.toFloat(), 0)
+            showDialogWithSlider(submitButtonCornerRadius.toFloat())
         }
 
         viewBinding.txtExternalId.setOnClickListener {
             customAlertDialogTextFieldView = LayoutInflater.from(this)
                 .inflate(R.layout.fragment_edit_text, null, false)
-            showDialogWithTextField(externalId, 1)
+            showDialogWithTextField(externalId)
         }
     }
 
-    private fun showDialog(color: String, typeColor: Int) {
+    private fun showDialog(color: String?, typeColor: Int) {
         colorPickerView = customAlertDialogView.findViewById(R.id.colorPicker)
         colorPickerView.color = Color.parseColor(color)
 
@@ -287,22 +319,31 @@ class MainActivity : AppCompatActivity() {
                         primaryColor = colorSelected
                     }
                     1 -> {
-                        accentColor = colorSelected
+                        primaryDarkColor = colorSelected
                     }
                     2 -> {
-                        docDetectFillUIColor = colorSelected
+                        secondaryColor = colorSelected
                     }
                     3 -> {
-                        submitButtonBackgroundColor = colorSelected
+                        secondaryDarkColor = colorSelected
                     }
                     4 -> {
-                        submitButtonBorderColor = colorSelected
+                        accentColor = colorSelected
                     }
                     5 -> {
-                        submitButtonFontColor = colorSelected
+                        accentDarkColor = colorSelected
                     }
                     6 -> {
-                        docDetectStrokeUIColor = colorSelected
+                        docDetectFillUIColor = colorSelected
+                    }
+                    7 -> {
+                        submitButtonBackgroundColor = colorSelected
+                    }
+                    8 -> {
+                        submitButtonBorderColor = colorSelected
+                    }
+                    9 -> {
+                        submitButtonFontColor = colorSelected
                     }
                 }
                 initColors()
@@ -314,37 +355,19 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun showDialogWithSlider(value: Float, type: Int) {
+    private fun showDialogWithSlider(value: Float) {
         barSliderView = customAlertDialogSliderView.findViewById(R.id.barSlider)
         barSliderView.value = value
         var titleDialog = ""
-        when (type) {
-            0 -> {
-                titleDialog = resources.getString(R.string.settings_set_submit_button_corner_radius)
-                barSliderView.valueFrom = 0.0f
-                barSliderView.valueTo = 20.0f
-                barSliderView.stepSize = 1.0f
-            }
-            1 -> {
-                titleDialog = resources.getString(R.string.settings_set_original_image_size)
-                barSliderView.valueFrom = 0.0f
-                barSliderView.valueTo = 10.0f
-                barSliderView.stepSize = 0.5f
-            }
-        }
+        titleDialog = resources.getString(R.string.settings_set_submit_button_corner_radius)
+        barSliderView.valueFrom = 0.0f
+        barSliderView.valueTo = 30.0f
+        barSliderView.stepSize = 1.0f
 
         materialAlertDialogBuilder.setView(customAlertDialogSliderView)
             .setTitle(titleDialog)
             .setPositiveButton(resources.getString(R.string.btn_ok)) { dialog, _ ->
-
-                when (type) {
-                    0 -> {
-                        submitButtonCornerRadius = barSliderView.value.toInt()
-                    }
-                    1 -> {
-                        originalImageMaxSizeInMB = barSliderView.value
-                    }
-                }
+                submitButtonCornerRadius = barSliderView.value.toInt()
                 initFloatValues()
                 dialog.dismiss()
             }
@@ -354,34 +377,18 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun showDialogWithTextField(value: String, type: Int) {
+    private fun showDialogWithTextField(value: String) {
         textFieldLayoutView = customAlertDialogTextFieldView.findViewById(R.id.textField_layout)
         textFieldView = customAlertDialogTextFieldView.findViewById(R.id.textField)
         textFieldView.setText(value)
         var titleDialog = ""
-        when (type) {
-            0 -> {
-                titleDialog = resources.getString(R.string.settings_set_email_cc_domain)
-                textFieldLayoutView.hint = resources.getString(R.string.settings_hint_cc_domain)
-            }
-            1 -> {
-                titleDialog = resources.getString(R.string.settings_set_external_id)
-                textFieldLayoutView.hint = resources.getString(R.string.settings_hint_external_id)
-            }
-        }
+        titleDialog = resources.getString(R.string.settings_set_external_id)
+        textFieldLayoutView.hint = resources.getString(R.string.settings_hint_external_id)
 
         materialAlertDialogBuilder.setView(customAlertDialogTextFieldView)
             .setTitle(titleDialog)
             .setPositiveButton(resources.getString(R.string.btn_ok)) { dialog, _ ->
-
-                when (type) {
-                    0 -> {
-                        emailCCDomain = textFieldView.text.toString()
-                    }
-                    1 -> {
-                        externalId = textFieldView.text.toString()
-                    }
-                }
+                externalId = textFieldView.text.toString()
                 initStringValues()
                 dialog.dismiss()
             }
@@ -407,7 +414,11 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.autoSkewCorrectionIsOn = autoSkewCorrectionIsOn
         veryfiLensSettings.autoCropGalleryIsOn = autoCropGalleryIsOn
         veryfiLensSettings.primaryColor = primaryColor
+        veryfiLensSettings.primaryDarkColor = primaryDarkColor
+        veryfiLensSettings.secondaryColor = secondaryColor
+        veryfiLensSettings.secondaryDarkColor = secondaryDarkColor
         veryfiLensSettings.accentColor = accentColor
+        veryfiLensSettings.accentDarkColor = accentDarkColor
         veryfiLensSettings.docDetectFillUIColor = docDetectFillUIColor
         veryfiLensSettings.submitButtonBackgroundColor = submitButtonBackgroundColor
         veryfiLensSettings.submitButtonBorderColor = submitButtonBorderColor
