@@ -68,53 +68,48 @@
 -keep class org.opencv.android.**
 -keep class org.apache.harmony.**
 
-# ormlite https://github.com/j256/ormlite-android/issues/84
--keepattributes *DatabaseField*
--keepattributes *DatabaseTable*
--keepattributes *SerializedName*
--keep class com.j256.**
--keepclassmembers class com.j256.** { *; }
--keep enum com.j256.**
--keepclassmembers enum com.j256.** { *; }
--keep interface com.j256.**
--keepclassmembers interface com.j256.** { *; }
--keepclassmembers class * {
-  public <init>(android.content.Context);
-}
--dontwarn com.j256.ormlite.android.**
--dontwarn com.j256.ormlite.logger.**
--dontwarn com.j256.ormlite.misc.**
--keepclassmembers class com.veryfi.lens.database.PendingUploadData {
-	@com.j256.ormlite.field.DatabaseField <fields>;
-	@com.j256.ormlite.field.ForeignCollectionField <fields>;
-}
--keep class com.veryfi.lens.database.DatabaseHelper
--keep class com.veryfi.lens.database.*
+#room
+-keep class * extends androidx.room.RoomDatabase
+-keep @androidx.room.Entity class *
+-dontwarn androidx.room.paging.**
 
 -keep class com.veryfi.lens.VeryfiLens
 -keep interface com.veryfi.lens.VeryfiLensDelegate
--keep class com.veryfi.lens.VeryfiLensSettings
--keep enum com.veryfi.lens.VeryfiLensSettings$ExtractionEngine
+-keep class com.veryfi.lens.helpers.VeryfiLensSettings
+-keep class com.veryfi.lens.helpers.DocumentType
+-keep class com.veryfi.lens.helpers.VeryfiLensCredentials
+-keep enum com.veryfi.lens.helpers.VeryfiLensSettings$ExtractionEngine
+-keep class com.veryfi.lens.helpers.ExportLogsHelper
 
 -keep class com.veryfi.lens.VeryfiLens {public *;}
 -keep interface com.veryfi.lens.VeryfiLensDelegate {public *;}
--keep class com.veryfi.lens.VeryfiLensSettings {public *;}
--keepclassmembers class com.veryfi.lens.VeryfiLensSettings { *; }
+-keep class com.veryfi.lens.helpers.VeryfiLensSettings {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.VeryfiLensSettings { *; }
+-keep class com.veryfi.lens.helpers.DocumentType {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.DocumentType { *; }
+-keep class com.veryfi.lens.helpers.VeryfiLensCredentials {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.VeryfiLensCredentials { *; }
+-keep class com.veryfi.lens.helpers.ExportLogsHelper {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.ExportLogsHelper { *; }
+-keep class com.veryfi.lens.helpers.VeryfiLensSettings {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.VeryfiLensSettings { *; }
+-keep class com.veryfi.lens.helpers.VeryfiLensSettings {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.VeryfiLensSettings { *; }
 
--keep class com.veryfi.lens.models.Category {public *;}
--keepclassmembers class com.veryfi.lens.models.Category { *; }
+-keep class com.veryfi.lens.helpers.models.Category {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.models.Category { *; }
 
--keep class com.veryfi.lens.models.CustomerProject {public *;}
--keepclassmembers class com.veryfi.lens.models.CustomerProject { *; }
+-keep class com.veryfi.lens.helpers.models.CustomerProject {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.models.CustomerProject { *; }
 
--keep class com.veryfi.lens.models.Job {public *;}
--keepclassmembers class com.veryfi.lens.models.Job { *; }
+-keep class com.veryfi.lens.helpers.models.Job {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.models.Job { *; }
 
--keep class com.veryfi.lens.models.Tag {public *;}
--keepclassmembers class com.veryfi.lens.models.Tag { *; }
+-keep class com.veryfi.lens.helpers.models.Tag {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.models.Tag { *; }
 
--keep class com.veryfi.lens.models.DocumentPending {public *;}
--keepclassmembers class com.veryfi.lens.models.DocumentPending { *; }
+-keep class com.veryfi.lens.helpers.models.DocumentInformation {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.models.DocumentInformation { *; }
 
 -keep class com.veryfi.lens.helpers.UploadingProcessHelper {public *;}
 -keepclassmembers class com.veryfi.lens.helpers.UploadingProcessHelper { *; }
@@ -133,8 +128,12 @@
     public static ** Companion;
 }
 
--keep class com.veryfi.lens.database.ProcessData {public *;}
--keepclassmembers class com.veryfi.lens.database.ProcessData { *; }
+-keep class com.veryfi.lens.helpers.database.ProcessData {public *;}
+-keepclassmembers class com.veryfi.lens.helpers.database.ProcessData { *; }
+
+-keep class com.veryfi.lens.cpp.ExportLogsCpp
+-keep class com.veryfi.lens.cpp.ExportLogsCpp {public *;}
+-keepclassmembers class com.veryfi.lens.cpp.ExportLogsCpp { *; }
 
 
 # eventbus
@@ -150,3 +149,5 @@
 -keepattributes Signature
 -keepclassmembers enum * { public static **[] values(); public static ** valueOf(java.lang.String); }
 -keepclassmembers enum * { *; }
+
+-keep class androidx.databinding.** { *; }
