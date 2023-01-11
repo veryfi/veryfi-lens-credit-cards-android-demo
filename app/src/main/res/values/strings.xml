@@ -69,4 +69,5 @@
     <string name="logs_error" translatable="false">Error</string>
     <string name="logs_failed" translatable="false">Failed</string>
     <string name="settings_gpu">GPU</string>
+    <string name="lens_demo_link">Our Lens demo app is now available on Google Play</string>
 </resources>

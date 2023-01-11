@@ -1,9 +1,11 @@
 package com.veryfi.lens.credit.cards.demo
 
 import android.annotation.SuppressLint
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -158,6 +160,24 @@ class MainActivity : AppCompatActivity() {
     private fun setUpClickEvents() {
         viewBinding.btnScan.setOnClickListener {
             setVeryfiSettings()
+        }
+
+        viewBinding.imgGetLensDemo.setOnClickListener {
+            try {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.veryfi.lensdemo")
+                    )
+                )
+            } catch (e: ActivityNotFoundException) {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=com.veryfi.lensdemo")
+                    )
+                )
+            }
         }
 
         viewBinding.switchLight.setOnCheckedChangeListener { _, isChecked ->
