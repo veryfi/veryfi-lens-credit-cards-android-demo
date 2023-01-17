@@ -151,10 +151,6 @@ class LogsActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        //do nothing
-    }
-
     companion object {
         const val STATUS = "status"
         const val START = "start"
