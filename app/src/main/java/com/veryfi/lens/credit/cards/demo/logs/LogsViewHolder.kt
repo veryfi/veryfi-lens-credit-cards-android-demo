@@ -8,6 +8,7 @@ class LogsViewHolder(private val itemBinding: LogsListItemBinding) :
 
     fun onBind(log: Log) {
         itemBinding.logsTitle.text = log.title
-        itemBinding.logsMessage.text = log.message
+        itemBinding.logsMessage.setJson(log.message)
+        itemBinding.logsMessage.expandJson()
     }
 }
