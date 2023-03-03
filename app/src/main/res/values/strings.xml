@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lens Demo</string>
+    <string name="app_name">Credit Cards Lens Demo</string>
     <string name="btn_ok">OK</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_scan">Scan</string>
