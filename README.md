@@ -38,7 +38,7 @@ package manager for Java.
 Add in your project build.gradle file the Veryfi Lens Credit Cards android SDK dependency:
 ```ruby
 dependencies {
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.0.4'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.0.5'
 }
 ```
 
@@ -46,7 +46,7 @@ dependencies {
 - Clone this repository
 - Open the demo with Android Studio
 - Add your Veryfi Artifactory credentials to settings.gradle
-- Replace credentials in `Application.kt` with yours
+- Replace credentials in `MainActivity.kt` with yours
 ```
 const val CLIENT_ID = "XXX" // replace XXX with your assigned Client Id
 const val AUTH_USERNAME = "XXX" // replace XXX with your assigned Username
