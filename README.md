@@ -46,7 +46,7 @@ dependencies {
 - Clone this repository
 - Open the demo with Android Studio
 - Add your Veryfi Artifactory credentials to settings.gradle
-- Replace credentials in `Application.kt` with yours
+- Replace credentials in `MainActivity.kt` with yours
 ```
 const val CLIENT_ID = "XXX" // replace XXX with your assigned Client Id
 const val AUTH_USERNAME = "XXX" // replace XXX with your assigned Username
