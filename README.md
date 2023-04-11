@@ -28,7 +28,7 @@ You can read further about Lens in Veryfi's dedicated page: https://www.veryfi.c
 ## Veryfi Lens Credit Cards Android Example <a name="example"></a>
 This is an example of how to use Veryfi Lens Credit Cards in your app, you can find the developer documentation [here](https://app.veryfi.com/lens/docs/android/).
 
-![LensCreditCardDemo](https://user-images.githubusercontent.com/30125790/189683896-edcda828-3ffb-408f-8ac2-838483152306.gif)
+![LensCreditCardDemo](credit-cards-demo.gif)
 
 ## How to add Veryfi Lens Credit Cards to your project <a name="maven"></a>
 
@@ -38,7 +38,7 @@ package manager for Java.
 Add in your project build.gradle file the Veryfi Lens Credit Cards android SDK dependency:
 ```ruby
 dependencies {
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.0.8'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.0.9'
 }
 ```
 
