@@ -68,7 +68,6 @@ class MainActivity : AppCompatActivity() {
     private var emailCCIsOn = veryfiLensSettings.emailCCIsOn
     private var emailCCDomain = veryfiLensSettings.emailCCDomain
     private var rotateDocIsOn = veryfiLensSettings.rotateDocIsOn
-    private var shieldProtectionIsOn = veryfiLensSettings.shieldProtectionIsOn
     private var autoDeleteAfterProcessing = veryfiLensSettings.autoDeleteAfterProcessing
     private var boostModeIsOn = veryfiLensSettings.boostModeIsOn
     private var boundingBoxesIsOn = veryfiLensSettings.boundingBoxesIsOn
@@ -433,7 +432,6 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.emailCCIsOn = emailCCIsOn
         veryfiLensSettings.emailCCDomain = emailCCDomain
         veryfiLensSettings.rotateDocIsOn = rotateDocIsOn
-        veryfiLensSettings.shieldProtectionIsOn = shieldProtectionIsOn
         veryfiLensSettings.autoDeleteAfterProcessing = autoDeleteAfterProcessing
         veryfiLensSettings.boostModeIsOn = boostModeIsOn
         veryfiLensSettings.boundingBoxesIsOn = boundingBoxesIsOn
