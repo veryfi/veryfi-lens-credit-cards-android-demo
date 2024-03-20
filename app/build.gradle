@@ -50,11 +50,11 @@ dependencies {
     // noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'com.github.martin-stone:hsv-alpha-color-picker-android:3.0.1'
     implementation 'com.github.lriccardo:TimelineView:1.1.2'
     implementation 'com.github.pvarry:android-json-viewer:v1.1'
 
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.2.8'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:1.7.2.9'
 }
