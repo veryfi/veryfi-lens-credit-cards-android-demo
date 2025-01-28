@@ -42,6 +42,7 @@
     <string name="settings_is_production">Is production</string>
     <string name="settings_confidence_details">Confidence details</string>
     <string name="settings_parse_address">Parse address</string>
+    <string name="settings_ignore_remote_settings">Ignore remote settings</string>
     <string name="settings_external_id">External ID</string>
     <string name="settings_manual_crop">Manual crop</string>
     <string name="settings_more_menu">More menu</string>
