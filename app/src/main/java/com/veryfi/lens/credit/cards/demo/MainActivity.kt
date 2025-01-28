@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     private var confidenceDetailsIsOn = veryfiLensSettings.confidenceDetailsIsOn
     private var parseAddressIsOn = veryfiLensSettings.parseAddressIsOn
     private var externalId = veryfiLensSettings.externalId ?: ""
+    private var ignoreRemoteSettings = true
     private var gpuIsOn = veryfiLensSettings.gpuIsOn
 
     override fun onStart() {
@@ -122,6 +123,7 @@ class MainActivity : AppCompatActivity() {
         viewBinding.switchIsProduction.isChecked = isProduction
         viewBinding.switchConfidenceDetails.isChecked = confidenceDetailsIsOn
         viewBinding.switchParseAddress.isChecked = parseAddressIsOn
+        viewBinding.switchIgnoreRemoteSettings.isChecked = ignoreRemoteSettings
         viewBinding.switchGpu.isChecked = gpuIsOn
         initColors()
         initFloatValues()
@@ -225,6 +227,10 @@ class MainActivity : AppCompatActivity() {
 
         viewBinding.switchParseAddress.setOnCheckedChangeListener { _, isChecked ->
             parseAddressIsOn = isChecked
+        }
+
+        viewBinding.switchIgnoreRemoteSettings.setOnCheckedChangeListener { _, isChecked ->
+            ignoreRemoteSettings = isChecked
         }
 
         viewBinding.switchGpu.setOnCheckedChangeListener { _, isChecked ->
@@ -441,6 +447,7 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.parseAddressIsOn = parseAddressIsOn
         veryfiLensSettings.gpuIsOn = gpuIsOn
         veryfiLensSettings.externalId = externalId
+        veryfiLensSettings.ignoreRemoteSettings = ignoreRemoteSettings
         veryfiLensSettings.documentTypes = arrayListOf(DocumentType.CREDIT_CARD)
         veryfiLensSettings.showDocumentTypes = true
 
