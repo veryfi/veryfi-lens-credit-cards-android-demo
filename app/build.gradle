@@ -49,7 +49,7 @@ android {
 
 dependencies {
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.0.0.9'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.0.0.10'
 
     // noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
