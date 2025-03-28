@@ -38,7 +38,7 @@ package manager for Java.
 Add in your project build.gradle file the Veryfi Lens Credit Cards android SDK dependency:
 ```ruby
 dependencies {
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.0.0.13'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.0.0.14'
 }
 ```
 Min SDK Android 6.0 (API level 23)
