@@ -5,11 +5,11 @@ plugins{
 }
 
 android {
-    compileSdk 34
+    compileSdk 36
     defaultConfig {
         applicationId "com.veryfi.lens.credit.cards.demo"
         minSdkVersion 23
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -49,7 +49,7 @@ android {
 
 dependencies {
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.1.0.25'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.1.0.28'
 
     // noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
