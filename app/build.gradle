@@ -19,10 +19,6 @@ android {
         buildConfigField 'String', 'VERYFI_URL', "\"${System.getenv("VERYFI_URL")}\""
     }
 
-    androidResources {
-        noCompress += "veryfi"
-    }
-
     buildFeatures {
         viewBinding true
         buildConfig true
@@ -49,7 +45,7 @@ android {
 
 dependencies {
     // Veryfi lens
-    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.1.0.42'
+    implementation 'com.veryfi.lens:veryfi-lens-credit-cards-sdk:2.1.0.43'
 
     // noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
