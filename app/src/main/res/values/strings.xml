@@ -39,7 +39,6 @@
     <string name="settings_boost_mode">Boost mode</string>
     <string name="settings_bounding_boxes">Bounding boxes</string>
     <string name="settings_detect_blur_response">Detect blur response</string>
-    <string name="settings_is_production">Is production</string>
     <string name="settings_confidence_details">Confidence details</string>
     <string name="settings_parse_address">Parse address</string>
     <string name="settings_ignore_remote_settings">Ignore remote settings</string>
