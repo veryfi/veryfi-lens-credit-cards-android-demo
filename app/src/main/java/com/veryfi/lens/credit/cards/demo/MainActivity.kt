@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
 import com.google.android.material.textfield.TextInputEditText
@@ -85,8 +86,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+        ThemeHelper.applyEdgeToEdgeInsets(viewBinding.root)
         materialAlertDialogBuilder = MaterialAlertDialogBuilder(this)
         applicationContext?.let { ThemeHelper.setBackgroundColorToStatusBar(this, it) }
         initVeryfiSettings()
